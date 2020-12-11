@@ -5,8 +5,8 @@
  */
 
 /*Hover over the lake or grass for the airplane to appear. Press
-the mouse to make it rain.
-*/
+ the mouse to make it rain.
+ */
 
 
 
@@ -30,9 +30,8 @@ void setup() {
   }
 }
 
-void draw() {
-  background(51, 51, 255);
 
+void Sun () {
   fill(245, 187, 87);
   stroke(245, 187, 87);
   push();
@@ -49,56 +48,9 @@ void draw() {
   line(45, 45, 30, 30);
   pop();
   noFill();
+}
 
-  if ( mouseX>A && mouseX<A+C && mouseY>B && mouseY<B+D ) {
-    img.resize(125, 125);
-    image(img, x, y);
-    x++;
-  }
-
-
-
-  noStroke();
-  fill(0, 102, 51);
-  rect(A, B, C, D);
-
-  fill(65, 105, 225);
-  quad(560, 700, 380, 480, 310, 480, 230, 700);
-
-  stroke(0);
-  fill(210, 105, 30);
-
-  rect(20, 400, 20, 150);
-  rect(120, 430, 20, 150);
-  rect(650, 400, 20, 150);
-  rect(570, 430, 20, 150);
-
-  noStroke();  
-  fill(0, 100, 0);
-  triangle(-30, 420, 120, 420, 46, 290);
-
-  fill(128, 128, 0);
-  triangle(-30, 360, 115, 360, 46, 250);
-
-  fill(107, 142, 35);
-  triangle(30, 480, 240, 480, 135, 350);
-
-  fill(0, 128, 0);
-  triangle(30, 420, 240, 420, 135, 320);
-
-  fill(0, 128, 0);
-  triangle(500, 450, 650, 450, 575, 320);
-
-  fill(173, 255, 47);
-  triangle(590, 410, 720, 410, 648, 250);
-
-  fill(128, 128, 0);
-  triangle(580, 350, 730, 350, 656, 200);
-
-
-  fill(0, 128, 0);
-  triangle(500, 400, 650, 400, 575, 300);
-
+void weatherChange () {
   if (mousePressed == true) {
     background(127);
 
@@ -178,4 +130,61 @@ void draw() {
       drops[i].display();
     }
   }
+}
+
+void draw() {
+  background(51, 51, 255);
+
+  Sun();
+
+  if ( mouseX>A && mouseX<A+C && mouseY>B && mouseY<B+D ) {
+    img.resize(125, 125);
+    image(img, x, y);
+    x++;
+  }
+
+
+
+  noStroke();
+  fill(0, 102, 51);
+  rect(A, B, C, D);
+
+  fill(65, 105, 225);
+  quad(560, 700, 380, 480, 310, 480, 230, 700);
+
+  stroke(0);
+  fill(210, 105, 30);
+
+  rect(20, 400, 20, 150);
+  rect(120, 430, 20, 150);
+  rect(650, 400, 20, 150);
+  rect(570, 430, 20, 150);
+
+  noStroke();  
+  fill(0, 100, 0);
+  triangle(-30, 420, 120, 420, 46, 290);
+
+  fill(128, 128, 0);
+  triangle(-30, 360, 115, 360, 46, 250);
+
+  fill(107, 142, 35);
+  triangle(30, 480, 240, 480, 135, 350);
+
+  fill(0, 128, 0);
+  triangle(30, 420, 240, 420, 135, 320);
+
+  fill(0, 128, 0);
+  triangle(500, 450, 650, 450, 575, 320);
+
+  fill(173, 255, 47);
+  triangle(590, 410, 720, 410, 648, 250);
+
+  fill(128, 128, 0);
+  triangle(580, 350, 730, 350, 656, 200);
+
+
+  fill(0, 128, 0);
+  triangle(500, 400, 650, 400, 575, 300);
+
+  weatherChange();
 }
